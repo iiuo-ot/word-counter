@@ -1,12 +1,15 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Word Counter — Online Tools</title>
-  <meta name="description" content="Free online Word Counter tool to count words, characters, sentences, and reading time in real-time.">
+  <meta name="description"
+    content="Free online Word Counter tool to count words, characters, sentences, and reading time in real-time.">
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <!-- Header -->
   <header class="site-header">
@@ -20,51 +23,8 @@
         </ul>
       </nav>
       <div class="controls">
-        <input 
-  class="search" 
-  type="search" 
-  id="toolSearch" 
-  placeholder="Search tools…" 
-  list="autocompleteList"
-/>
-<datalist id="autocompleteList"></datalist>
-
-<script>
-const searchInput = document.getElementById('toolSearch');
-const dataList = document.getElementById('autocompleteList');
-
-// Fetch Google autocomplete suggestions
-searchInput.addEventListener('input', function() {
-  const query = this.value.trim();
-  if (!query) return;
-  
-  const script = document.createElement('script');
-  script.src = `https://suggestqueries.google.com/complete/search?client=firefox&q=${encodeURIComponent(query)}&callback=handleSuggestions`;
-  document.body.appendChild(script);
-  script.remove();
-});
-
-function handleSuggestions(data) {
-  const suggestions = data[1];
-  dataList.innerHTML = '';
-  suggestions.forEach(item => {
-    const option = document.createElement('option');
-    option.value = item;
-    dataList.appendChild(option);
-  });
-}
-
-// Handle Enter key or mobile "search" action
-searchInput.addEventListener('keydown', function(e) {
-  if (e.key === 'Enter') {
-    e.preventDefault();
-    const query = encodeURIComponent(this.value.trim());
-    if (query) {
-      window.open(`https://www.google.com/search?q=${query}+site%3Aot.itisuniqueofficial.com`, '_blank');
-    }
-  }
-});
-</script>
+        <input class="search" type="search" id="toolSearch" placeholder="Search tools…" list="autocompleteList" />
+        <datalist id="autocompleteList"></datalist>
         <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu">☰</button>
       </div>
     </div>
@@ -80,7 +40,7 @@ searchInput.addEventListener('keydown', function(e) {
   <section class="container">
     <div class="card tool-box">
       <textarea id="textInput" placeholder="Type or paste your text here..." rows="10"></textarea>
-      
+
       <div class="results-grid">
         <div class="result-card">
           <h3>Words</h3>
@@ -105,10 +65,14 @@ searchInput.addEventListener('keydown', function(e) {
   <!-- Informative Section -->
   <section class="container article-section">
     <h2>Introduction</h2>
-    <p>The Word Counter is a free online tool designed to help writers, students, bloggers, and professionals quickly calculate word and character counts. Whether you’re drafting an essay, social media post, or article, this tool provides instant insights.</p>
+    <p>The Word Counter is a free online tool designed to help writers, students, bloggers, and professionals quickly
+      calculate word and character counts. Whether you’re drafting an essay, social media post, or article, this tool
+      provides instant insights.</p>
 
     <h2>What is Word Counter Tool?</h2>
-    <p>A Word Counter Tool measures the number of words, characters, and sentences in your text. It also estimates the reading time based on average reading speed (200 words per minute). This helps you maintain ideal content length for SEO, readability, or assignments.</p>
+    <p>A Word Counter Tool measures the number of words, characters, and sentences in your text. It also estimates the
+      reading time based on average reading speed (200 words per minute). This helps you maintain ideal content length
+      for SEO, readability, or assignments.</p>
 
     <h2>How to Use?</h2>
     <ul>
@@ -119,7 +83,8 @@ searchInput.addEventListener('keydown', function(e) {
     </ul>
 
     <h2>Conclusion</h2>
-    <p>The Word Counter tool saves time and helps ensure your content meets specific requirements. Simple, fast, and accurate — perfect for anyone who writes online or offline.</p>
+    <p>The Word Counter tool saves time and helps ensure your content meets specific requirements. Simple, fast, and
+      accurate — perfect for anyone who writes online or offline.</p>
   </section>
 
   <!-- Footer -->
@@ -137,7 +102,7 @@ searchInput.addEventListener('keydown', function(e) {
   </footer>
 
   <script src="script.js"></script>
+  <script src="/search.js"></script>
 </body>
+
 </html>
-
-
